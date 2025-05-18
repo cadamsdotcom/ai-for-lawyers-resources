@@ -1,0 +1,314 @@
+{
+  "name": "Generate Costs Agreement",
+  "nodes": [
+    {
+      "parameters": {
+        "sourceKey": "data",
+        "data": "={\n  \"Instructions\": \"{{ $('Unify JSON inputs from both triggers').item.json.data.Instructions }}\",\n  \"FixedFeeCost\": \"{{ $('Unify JSON inputs from both triggers').item.json.data.FixedFeeCost }}\",\n  \"FixedFeeCostPlusGST\": \"{{ Math.round($('Unify JSON inputs from both triggers').item.json.data.FixedFeeCost * 1.1) }}\",\n  \"IsFixedFee\": \"{{ $('Unify JSON inputs from both triggers').item.json.data.IsFixedFee }}\",\n  \"PartnerCost\": \"{{ $('Unify JSON inputs from both triggers').item.json.data.PartnerCost }}\",\n  \"PartnerCostPlusGST\": \"{{ Math.round($('Unify JSON inputs from both triggers').item.json.data.PartnerCost * 1.1) }}\",\n  \"SeniorAssociateCost\": \"{{ $('Unify JSON inputs from both triggers').item.json.data.SeniorAssociateCost }}\",\n  \"SeniorAssociateCostPlusGST\": \"{{ Math.round($('Unify JSON inputs from both triggers').item.json.data.SeniorAssociateCost * 1.1) }}\",\n  \"SolicitorCost\": \"{{ $('Unify JSON inputs from both triggers').item.json.data.SolicitorCost }}\",\n  \"SolicitorCostPlusGST\": \"{{ Math.round($('Unify JSON inputs from both triggers').item.json.data.SolicitorCost * 1.1) }}\",\n  \"IsTimeBasedFee\": \"{{ $('Unify JSON inputs from both triggers').item.json.data.IsTimeBasedFee }}\",\n  \"PartnerResponsible\": \"{{ $('Unify JSON inputs from both triggers').item.json.data.PartnerResponsible }}\",\n  \"SolicitorResponsible\": \"{{ $('Unify JSON inputs from both triggers').item.json.data.SolicitorResponsible }}\",\n  \"PhotocopyingCost\": \"{{ $('Unify JSON inputs from both triggers').item.json.data.PhotocopyingCost }}\",\n  \"PhotocopyingCostPlusGST\": \"{{ Math.round($('Unify JSON inputs from both triggers').item.json.data.PhotocopyingCost * 1.1) }}\",\n  \"ProfessionalFees\": \"{{ $('Unify JSON inputs from both triggers').item.json.data.ProfessionalFees }}\",\n  \"DisbursementsFees\": \"{{ $('Unify JSON inputs from both triggers').item.json.data.DisbursementsFees }}\",\n  \"InternalExpensesFees\": \"{{ $('Unify JSON inputs from both triggers').item.json.data.InternalExpensesFees }}\",\n  \"TotalFees\": \"{{ $('Unify JSON inputs from both triggers').item.json.data.ProfessionalFees + $('Unify JSON inputs from both triggers').item.json.data.DisbursementsFees + $('Unify JSON inputs from both triggers').item.json.data.InternalExpensesFees }}\",\n  \"Today\": \"{{ $today.format('DD') }}\",\n  \"Client\": \"{{ $('Unify JSON inputs from both triggers').item.json.data.Client }}\",\n  \"PracticeName\": \"{{ $('Unify JSON inputs from both triggers').item.json.data.PracticeName }}\"\n}",
+        "outputFileName": "=Costs Agreement for {{ $('Unify JSON inputs from both triggers').item.json.data.Client }}"
+      },
+      "type": "n8n-nodes-fill-docx.fillDocx",
+      "typeVersion": 1,
+      "position": [
+        420,
+        -180
+      ],
+      "id": "05bc4158-6f5d-4b14-a75f-34ce6db7f277",
+      "name": "Fill Docx"
+    },
+    {
+      "parameters": {
+        "inputSource": "jsonExample",
+        "jsonExample": "{\n  \"Instructions\": \"Instructions\",\n  \"FixedFeeCost\": 300,\n  \"IsFixedFee\": true,\n  \"PartnerCost\": \"500\",\n  \"SeniorAssociateCost\": \"700\",\n  \"SolicitorCost\": \"900\",\n  \"IsTimeBasedFee\": true,\n  \"PartnerResponsible\": \"PartnerResponsible\",\n  \"SolicitorResponsible\": \"SolicitorResponsible\",\n  \"PhotocopyingCost\": 100,\n  \"ProfessionalFees\": 6000,\n  \"DisbursementsFees\": 300,\n  \"InternalExpensesFees\": 500,\n  \"Client\": \"Client\",\n  \"PracticeName\": \"PracticeName\"\n}"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -240,
+        -80
+      ],
+      "id": "520bba9b-1ba1-4a3c-a36b-e610cdf71cfa",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "sendTo": "your@email.com",
+        "subject": "=Costs Agreement for {{ $('Unify JSON inputs from both triggers').item.json.data.Client }}",
+        "emailType": "text",
+        "message": "=Attached is a Costs Agreement template for client {{ $('Unify JSON inputs from both triggers').item.json.data.Client }}.\n\nDocument was generated on {{ $now.format('DD') }} at {{ $now.format('hh:mm:ss a ZZZZ') }}.",
+        "options": {
+          "appendAttribution": false,
+          "attachmentsUi": {
+            "attachmentsBinary": [
+              {
+                "property": "document"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        640,
+        -180
+      ],
+      "id": "dbe164d1-5d44-4b4f-a6ca-f7d058820a5a",
+      "name": "Gmail",
+      "webhookId": "a211cd7a-9f3f-4307-b7a5-c440fb1c00bd",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "uq8y9HzKYvnVsOME",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "69728768-44aa-47f2-b392-dfe6d5a0a4dc",
+        "authentication": "headerAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -460,
+        -280
+      ],
+      "id": "739ef346-0363-434a-9713-9a0c91a04956",
+      "name": "Webhook",
+      "webhookId": "69728768-44aa-47f2-b392-dfe6d5a0a4dc",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "XBSAw632ydP7iSai",
+          "name": "Bearer Header Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={{ $json.body.keys().length > 1 ? $json.body : $json.body.keys()[0] }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -240,
+        -280
+      ],
+      "id": "47312017-4ef9-47c1-86c1-3b475f16db36",
+      "name": "Extract body JSON"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f8b43292-86b8-490c-9529-a67844ce21f1",
+              "name": "data",
+              "value": "={{ $('Extract body JSON').isExecuted ? $('Extract body JSON').item.json : $('When Executed by Another Workflow').item }}",
+              "type": "object"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -20,
+        -180
+      ],
+      "id": "0341679d-e9aa-4455-be23-947f3029b244",
+      "name": "Unify JSON inputs from both triggers"
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "1rBVhMVuQ_XisDDMu8uWwyvElhr6aaL3Q",
+          "mode": "list",
+          "cachedResultName": "Disclosure and Costs Agreement Template updated 040417.docx",
+          "cachedResultUrl": "https://docs.google.com/document/d/1rBVhMVuQ_XisDDMu8uWwyvElhr6aaL3Q/edit?usp=drivesdk&ouid=117846019919286010033&rtpof=true&sd=true"
+        },
+        "options": {
+          "binaryPropertyName": "data"
+        }
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        200,
+        -180
+      ],
+      "id": "91c6d62a-6eeb-4a72-ae4a-cbd85eff7f80",
+      "name": "Download Costs Agreement Docx",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "ZZZ",
+          "name": "Google Drive account"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "When Executed by Another Workflow": [
+      {
+        "json": {
+          "Instructions": "Instructions",
+          "FixedFeeCost": 300,
+          "IsFixedFee": true,
+          "PartnerCost": "500",
+          "SeniorAssociateCost": "700",
+          "SolicitorCost": "900",
+          "IsTimeBasedFee": true,
+          "PartnerResponsible": "PartnerResponsible",
+          "SolicitorResponsible": "SolicitorResponsible",
+          "PhotocopyingCost": 100,
+          "ProfessionalFees": 6000,
+          "DisbursementsFees": 300,
+          "InternalExpensesFees": 500,
+          "Client": "Client",
+          "PracticeName": "PracticeName"
+        }
+      }
+    ],
+    "Webhook": [
+      {
+        "json": {
+          "headers": {
+            "host": "self.hosted.n8n.local",
+            "user-agent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot",
+            "content-length": "470",
+            "accept": "*/*",
+            "accept-encoding": "gzip, deflate, br",
+            "content-type": "application/json",
+            "openai-conversation-id": "643cf4a3-8235-5b07-be6d-66f212227e17",
+            "openai-ephemeral-user-id": "4c43b758-13c9-5b1b-ba5f-fd7b6f6a45a5",
+            "openai-gpt-id": "g-6825829e5ad081919902153164cf8ed0",
+            "tailscale-funnel-request": "?1",
+            "traceparent": "00-68268b2d0000000087d6fcfc261f2341-fe09e9e18c30f384-00",
+            "tracestate": "dd=s:-1;p:5d1b7a80819f6fe9",
+            "x-datadog-parent-id": "8630022721874182725",
+            "x-datadog-sampling-priority": "-1",
+            "x-datadog-tags": "_dd.p.tid=68268b2d00000000,_dd.p.dm=-3",
+            "x-datadog-trace-id": "9788289000037884737",
+            "x-forwarded-for": "20.97.188.151",
+            "x-forwarded-host": "self.hosted.n8n.local",
+            "x-forwarded-proto": "https",
+            "x-openai-internal-caller": "plugin-service",
+            "x-openai-originator": "sa-server-convo",
+            "x-openai-originator-env": "prod",
+            "x-openai-product-sku": "unknown",
+            "x-openai-traffic-source": "user"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "Instructions": "Prepare and send a costs agreement for commercial lease review.",
+            "FixedFeeCost": 2200,
+            "IsFixedFee": true,
+            "PartnerCost": "500",
+            "SeniorAssociateCost": "400",
+            "SolicitorCost": "300",
+            "IsTimeBasedFee": false,
+            "PartnerResponsible": "Jane Smith",
+            "SolicitorResponsible": "John Doe",
+            "PhotocopyingCost": 50,
+            "ProfessionalFees": 2200,
+            "DisbursementsFees": 150,
+            "InternalExpensesFees": 75,
+            "Client": "ABC Property Group",
+            "PracticeName": "Smith & Co Legal"
+          },
+          "webhookUrl": "http://localhost:5678/webhook/69728768-44aa-47f2-b392-dfe6d5a0a4dc",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "connections": {
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Unify JSON inputs from both triggers",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fill Docx": {
+      "main": [
+        [
+          {
+            "node": "Gmail",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Extract body JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract body JSON": {
+      "main": [
+        [
+          {
+            "node": "Unify JSON inputs from both triggers",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Unify JSON inputs from both triggers": {
+      "main": [
+        [
+          {
+            "node": "Download Costs Agreement Docx",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Costs Agreement Docx": {
+      "main": [
+        [
+          {
+            "node": "Fill Docx",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Australia/Sydney",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "versionId": "9524af55-7248-4f87-80c9-24483cd598b9",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "778b8b817fc70769f967a7e1363204f053c0ba47406b91d76e0e5b9330fe7ff0"
+  },
+  "id": "Heqt8zn9fkyJHaLI",
+  "tags": []
+}
