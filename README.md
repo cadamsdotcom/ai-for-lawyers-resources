@@ -26,7 +26,7 @@ Note also you will need a make.com account to use make.com to import and create 
 
 ---
 
-# Intake & Lead-qualification Chatbot
+# 1. Intake & Lead-qualification Chatbot
 
 <details>
 
@@ -152,7 +152,7 @@ Save time on the phone and make sure you have all the information before you rea
 
 ---
 
-# Client Facing Explainer Chatbot
+# 2. Client Facing Explainer Chatbot
 
 <details>
 
@@ -273,7 +273,7 @@ Save time by spending less time on the phone and writing emails, just to bill cl
 
 ---
 
-# Documents email alias
+# 3. Documents email alias
 
 <details>
 
@@ -300,7 +300,7 @@ Save time and make all attachments from clients available to everyone who works 
 
 ---
 
-# Template Filling AI Chat
+# 4. Template Filling AI Chat
 
 <details>
 
@@ -420,7 +420,7 @@ Save the time you don't want to spend creating documents from Precedents and use
 
 ---
 
-# Layperson Legal Explanations Generator
+# 5. Layperson Legal Explanations Generator
 
 <details>
 
