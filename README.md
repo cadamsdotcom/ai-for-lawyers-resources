@@ -28,6 +28,8 @@ Note also you will need a make.com account to use make.com to import and create 
 
 # Intake & Lead-qualification Chatbot
 
+<details>
+
 ## What it is:
 This is an AI chat which you can send prospects to in order to supply all details required to qualify them as a lead and potentially, start working with them.
 
@@ -146,10 +148,13 @@ Save time on the phone and make sure you have all the information before you rea
 - Customize the questions prospects must supply at intake: go to your Intake GPT, click "Edit GPT" and modify the prompt for the Custom GPT to change the list of questions asked.
 - Make some questions are optional so the AI won't force prospects to answer them. Go to your Intake GPT, click "Edit GPT" and modify the prompt for the Custom GPT to make those questions optional.
 - Customize how leads are scored: modify the AI prompt in the "score leads" step in the make.com workflow.
+</details>
 
 ---
 
 # Client Facing Explainer Chatbot
+
+<details>
 
 ## What it is:
 AI chat to send to clients, so they can ask as many questions as needed to understand their case. When they're ready, they can also share their conversation with you.
@@ -264,9 +269,13 @@ Save time by spending less time on the phone and writing emails, just to bill cl
 - Email multiple people, any of whom can reach out to the client: add more email addresses to the make.com automation.
 - Archive the conversation: add a step to the make.com automation.
 
+</details>
+
 ---
 
 # Documents email alias
+
+<details>
 
 ## What it is:
 When an email is sent to a specific email address, such as documents@your-firm.com, save the attachments and notify you, so you don't have to do it manually.
@@ -287,9 +296,13 @@ Save time and make all attachments from clients available to everyone who works 
 - Record the email's arrival in tour customer file
 - Notify multiple people when documents@ emails arrive.
 
+</details>
+
 ---
 
 # Template Filling AI Chat
+
+<details>
 
 ## What it is:
 Chat with ChatGPT - potentially using your voice - to create template-filled documents from your Precedents. This example lets you create a Costs Agreement from a template.
@@ -403,9 +416,13 @@ Save the time you don't want to spend creating documents from Precedents and use
 - Enhance the existing template to have more features
 - Add more default values to the GPT prompt so you don't need to specify everything every time.
 
+</details>
+
 ---
 
 # Layperson Legal Explanations Generator
+
+<details>
 
 ## What it is:
 Save yourself time spent writing out explanations of legal situations by brainstorming with this GPT that is pre-loaded with instructions to quickly help you. Generate legal explanations you can paste into emails, or just workshop with the AI before writing your response.
@@ -445,6 +462,8 @@ Save time you'd have to spent gathering your thoughts before writing an explanat
 
 ## What else can you do with it?
 - Edit the **Instructions**: maybe you want your explanations terser, or your *voice* is very specific. Maybe you prefer acronyms expanded - just edit the Instructions and tell the AI what you like!
+
+</details>
 
 ---
 
