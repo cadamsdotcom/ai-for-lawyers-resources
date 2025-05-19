@@ -6,7 +6,7 @@ Got questions, comments, or need help bringing your AI ideas to life?
 
 Book a free strategy call: https://cal.com/cadamsdotcom/free-strategy-call
 
-Everything you need to get started can be found below.
+Everything you need to get started is below.
 
 ---
 
@@ -16,7 +16,7 @@ The 5 tools demoed in this video are:
 
 1. Intake & Lead-qualification Chat
 2. Client Facing Explainer GPT
-3. Documents email address (aiutomatically save attachments based on email sender)
+3. Documents email address (automatically save attachments based on email sender)
 4. Generate documents from a Precedent template with AI
 5. Plain law translator AI chatbot
 
@@ -48,7 +48,7 @@ Save time on the phone and make sure you have all the information before you rea
     4. Update the "send to" address in the Gmail node to your desired email
     5. Open the Webhooks node and select **Create a webhook** to make your webhook. We will be using the webhook in the next step when we make the Custom GPT.
     6. Click "Copy address to clipboard". This will save the URL for the Custom GPT "action" we will create in the next step.
-    7. Enable the workflow so it can be called from the Custom GPT.
+    7. Enable the workflow so it can be called by the Custom GPT.
 2. Make your Lead Intake Custom GPT:
     1. Log in to ChatGPT, then go to "Explore GPTs" then click "Create"
     2. Head over to the **Configure** tab.
@@ -171,7 +171,7 @@ Save time by spending less time on the phone and writing emails, just to bill cl
 ## How to get started:
 1. As in the instructions above, import [Explainer GPT Notifier.json](https://github.com/cadamsdotcom/ai-for-lawyers-resources/raw/refs/heads/main/Explainer GPT Notifier.json)
 2. Fix the webhook and Gmail connections.
-3. Enable the workflow so it can be called from the Custom GPT.
+3. Enable the workflow so it can be called by the Custom GPT.
 4. Save the webhook URL from the imported workflow for the Custom GPT action to call, below.
 5. Create your Custom GPT:
     1. Name: **[CLIENT NAME] Explainer GPT by [YOUR FIRM NAME]** (eg. **John Appleseed Explainer GPT By ExampleFirm**)
@@ -295,7 +295,7 @@ Save time and make all attachments from clients available to everyone who works 
 1. As above, log in to make.com, create a new scenario, and import [Document Attachments Autosave.json](https://github.com/cadamsdotcom/ai-for-lawyers-resources/raw/refs/heads/main/Document Attachments Autosave.json)
 2. Fix the Gmail and Google Drive connections, so they work with your setup.
 3. Configure documents@your-firm.com so that emails sent there arrive in your inbox. This will be sapecific to your email configuration.
-4. Enable the workflow.
+4. Enable the workflow so it can be called by the Custom GPT.
 5. Test by sending an email to documents@ to verify the workflow is working.
 
 
