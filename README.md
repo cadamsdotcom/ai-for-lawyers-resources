@@ -29,10 +29,12 @@ Note also you will need a make.com account to use make.com to import and create 
 # 1. Intake & Lead-qualification Chatbot
 
 ## What it is:
-An AI chat which you can send prospects to in order to supply all details required to qualify them as a lead and potentially, start working with them.
+More freeform client-intake tool. ChatGPT asks prospects for the details you require, which is shared with you. Each prospect can be qualified as a lead so potentially, you can start working with them.
+
+You see all chat between ChatGPT and the prospect.
 
 ## Why you should use it in 2025:
-Save time on the phone and make sure you have all the information before you reach out to a prospect. Scores
+Save time on the phone and make sure you have all the information before you reach out to a prospect. Score leads according to criteria you define.
 
 ![Architecture Diagram For This Tool](Figure%201.png)
 
