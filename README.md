@@ -28,13 +28,15 @@ Note also you will need a make.com account to use make.com to import and create 
 
 # 1. Intake & Lead-qualification Chatbot
 
-<details>
-
 ## What it is:
-This is an AI chat which you can send prospects to in order to supply all details required to qualify them as a lead and potentially, start working with them.
+An AI chat which you can send prospects to in order to supply all details required to qualify them as a lead and potentially, start working with them.
 
 ## Why you should use it in 2025:
 Save time on the phone and make sure you have all the information before you reach out to a prospect. Scores
+
+![Architecture Diagram For This Tool](Figure%201.png)
+
+<details><summary>How to get started</summary>
 
 ## How to get started:
 1. Create the make.com automation scenario:
@@ -42,7 +44,7 @@ Save time on the phone and make sure you have all the information before you rea
     2. Click the *...* (triple dots) and **Import blueprint**, then import [Intake GPT Notifier.json](https://github.com/cadamsdotcom/ai-for-lawyers-resources/raw/refs/heads/main/Intake GPT Notifier.json)
     3. Connect the "AI based lead scope" to OpenAI and "Gmail" to your Gmail.
     4. Update the "send to" address in the Gmail node to your desired email
-    5. Open the Webhooks node and select **Create a webhook** to make your webhook. This is what we will be calling from the Custom GPT in the next step.
+    5. Open the Webhooks node and select **Create a webhook** to make your webhook. We will be using the webhook in the next step when we make the Custom GPT.
     6. Click "Copy address to clipboard". This will save the URL for the Custom GPT "action" we will create in the next step.
     7. Enable the workflow so it can be called from the Custom GPT.
 2. Make your Lead Intake Custom GPT:
@@ -154,13 +156,15 @@ Save time on the phone and make sure you have all the information before you rea
 
 # 2. Client Facing Explainer Chatbot
 
-<details>
-
 ## What it is:
 AI chat to send to clients, so they can ask as many questions as needed to understand their case. When they're ready, they can also share their conversation with you.
 
 ## Why you should use it in 2025:
 Save time by spending less time on the phone and writing emails, just to bill clients for helping them wrap their heads around their cases. Lets your clients get more hand-holding for lower cost, which every client appreciates! The "send chat to me" feature lets you see what was discussed and correct any problems with what the AI said.
+
+![Architecture Diagram For This Tool](Figure%202.png)
+
+<details><summary>How to get started</summary>
 
 ## How to get started:
 1. As in the instructions above, import [Explainer GPT Notifier.json](https://github.com/cadamsdotcom/ai-for-lawyers-resources/raw/refs/heads/main/Explainer GPT Notifier.json)
@@ -275,13 +279,15 @@ Save time by spending less time on the phone and writing emails, just to bill cl
 
 # 3. Documents email alias
 
-<details>
-
 ## What it is:
 When an email is sent to a specific email address, such as documents@your-firm.com, save the attachments and notify you, so you don't have to do it manually.
 
 ## Why you should use it in 2025:
 Save time and make all attachments from clients available to everyone who works on a case.
+
+![Architecture Diagram For This Tool](Figure%203.png)
+
+<details><summary>How to get started</summary>
 
 ## How to get started:
 1. As above, log in to make.com, create a new scenario, and import [Document Attachments Autosave.json](https://github.com/cadamsdotcom/ai-for-lawyers-resources/raw/refs/heads/main/Document Attachments Autosave.json)
@@ -302,13 +308,15 @@ Save time and make all attachments from clients available to everyone who works 
 
 # 4. Template Filling AI Chat
 
-<details>
-
 ## What it is:
 Chat with ChatGPT - potentially using your voice - to create template-filled documents from your Precedents. This example lets you create a Costs Agreement from a template.
 
 ## Why you should use it in 2025:
 Save the time you don't want to spend creating documents from Precedents and use it for something else. Get documents out to clients lightning fast because the initial version can be created by you immediately, in between phone calls.
+
+![Architecture Diagram For This Tool](Figure%204.png)
+
+<details><summary>How to get started</summary>
 
 ## How to get started (advanced):
 1. Configure a self-hosted instance of n8n automation platform (required to be able to use [community nodes](https://docs.n8n.io/integrations/community-nodes/installation/))
@@ -422,13 +430,15 @@ Save the time you don't want to spend creating documents from Precedents and use
 
 # 5. Layperson Legal Explanations Generator
 
-<details>
-
 ## What it is:
 Save yourself time spent writing out explanations of legal situations by brainstorming with this GPT that is pre-loaded with instructions to quickly help you. Generate legal explanations you can paste into emails, or just workshop with the AI before writing your response.
 
 ## Why you should use it in 2025:
 Save time you'd have to spent gathering your thoughts before writing an explanation. Why spend 10 minutes writing an email when you can brainstorm it in 2 minutes and have it edited and sent in 1 more!
+
+![Architecture Diagram For This Tool](Figure%205.png)
+
+<details><summary>How to get started</summary>
 
 ## How to get started:
 1. Make your Plain Law Guide Custom GPT:
