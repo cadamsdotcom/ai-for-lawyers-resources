@@ -68,7 +68,11 @@ Make it ask for your jurisdiction, or be an expert in your area of law. Or make 
 
 Note: you will need a make.com account to use make.com to import and create scenarios. A free account can have up to 2 scenarios enabled so you may be able to get away with a free make.com account.
 
-TODO: standard sections
+## What it is:
+Automate your daily work with [make.com](https://make.com) - a web based tool that connects different sources of data and allows you to encode your daily work in the form of workflows. Perform actions when you receive emails, in response to chat messages, and more.
+
+## Why you should use it in 2025:
+Automating the simple stuff frees you up to work on the stuff that truly matters - the work where your creative input can have the most leverage.
 
 <details><summary>How to get started</summary>
 
@@ -91,7 +95,11 @@ Make it analyze the attachment to determine whether to save it in a different pl
 
 ## Deep Dive 3 & 4: Anthropic's Claude, Alternative AI to ChatGPT
 
-TODO: standard sections
+## What it is:
+Claude is an alternative to ChatGPT that has all the same feaures plus a few extras. In particular it lets you upload documents and ask questions of them, and can connect to your Google Drive, Gmail, Google Calendar, and more.
+
+## Why you should use it in 2025:
+Unlike ChatGPT, Anthropic PBC Public Benefit Corp. (creators of Claude) [claim](https://privacy.anthropic.com/en/articles/7996868-is-my-data-used-for-model-training) not to use the data you send to Claude for anything except answering your queries. This means you can use it in more circumstances than ChatGPT - although you should still carefully consider the impact of using AIs for different types of legal work.
 
 <details><summary>How to get started</summary>
 
@@ -115,7 +123,13 @@ Claude can make charts and diagrams too! When working with any data, try asking 
 
 ## Deep Dive 5: Fathom Online Meeting Recorder
 
-TODO: standard sections
+## What it is:
+Software that automatically records your online meetings, keeping track of who said what. After the meeting is over, it prepares a summary, transcript, and an AI Q&A which can be used later to refer back to the meeting.
+
+## Why you should use it in 2025:
+Save time later by being able to quickly see what was discussed in your online meetings and skip t the relevant parts of the recording. Fathom can automatically email the meeting recording and annotated summary to your attendees and you, right after the meeting ends. It also lets you see the transcript and summary of the meeting, plus it gives you an AI that can understand the meeting and you can ask questions of the AI.
+
+But most importantly, Fathom [claims]([url](https://fathom.video)) not to train on your data.
 
 <details><summary>How to get started</summary>
 
