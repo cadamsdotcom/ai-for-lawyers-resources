@@ -1,5 +1,9 @@
 # June 2025 - 5 Powerful AI Tools Every Lawyer Should Use in 2025
 
+[View Video on YouTube](https://youtu.be/JBOTotd_Uow)
+
+---
+
 The 5 tools demoed in this video are:
 
 1. Laypersons Legal Translator GPT
