@@ -95,7 +95,7 @@ TODO: standard sections
 
 <details><summary>How to get started</summary>
 
-1. Create a Claude account.
+1. Create a Claude account at [https://claude.ai](https://claude.ai)).
 2. Download the Claude Desktop app for your system.
 3. To upload documents, click the "+" button. Now your chat session will know the contents of the document.
 4. To connect Google services (Gmail, Google Drive, Google Calendar), click the icon with sliders (labeled "Search and Tools"). Now your chat session can obtain data from Google services.
