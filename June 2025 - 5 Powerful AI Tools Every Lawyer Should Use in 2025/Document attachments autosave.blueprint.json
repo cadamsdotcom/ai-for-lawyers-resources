@@ -6,9 +6,9 @@
             "module": "google-email:TriggerNewEmail",
             "version": 2,
             "parameters": {
-                "folder": "INBOX",
-                "xGmRaw": "to:documents@cadams.com",
-                "account": 8136307,
+                "folder": "[Gmail]/All Mail",
+                "xGmRaw": "to:documents@example.com",
+                "account": 123,
                 "markSeen": false,
                 "maxResults": 1,
                 "searchType": "gmail"
@@ -23,7 +23,7 @@
                     "parameters": {
                         "folder": {
                             "path": [
-                                "INBOX"
+                                "All Mail"
                             ]
                         },
                         "account": {
@@ -31,7 +31,7 @@
                                 "scoped": "true",
                                 "connection": "google-restricted"
                             },
-                            "label": "My Google Restricted connection (chris@cadams.com.au)"
+                            "label": "My Google Restricted connection (Add yours)"
                         },
                         "searchType": {
                             "label": "Gmail filter"
@@ -84,120 +84,21 @@
             }
         },
         {
-            "id": 8,
-            "module": "regexp:Parser",
-            "version": 1,
-            "parameters": {
-                "global": false,
-                "pattern": "^To: \\<(?<forwardedFromEmail>[^>]*)\\>",
-                "multiline": true,
-                "sensitive": true,
-                "singleline": false,
-                "continueWhenNoRes": true
-            },
-            "mapper": {
-                "text": "{{1.text}}"
-            },
-            "metadata": {
-                "designer": {
-                    "x": 300,
-                    "y": 0
-                },
-                "restore": {},
-                "parameters": [
-                    {
-                        "name": "pattern",
-                        "type": "text",
-                        "label": "Pattern",
-                        "required": true
-                    },
-                    {
-                        "name": "global",
-                        "type": "boolean",
-                        "label": "Global match",
-                        "required": true
-                    },
-                    {
-                        "name": "sensitive",
-                        "type": "boolean",
-                        "label": "Case sensitive",
-                        "required": true
-                    },
-                    {
-                        "name": "multiline",
-                        "type": "boolean",
-                        "label": "Multiline",
-                        "required": true
-                    },
-                    {
-                        "name": "singleline",
-                        "type": "boolean",
-                        "label": "Singleline",
-                        "required": true
-                    },
-                    {
-                        "name": "continueWhenNoRes",
-                        "type": "boolean",
-                        "label": "Continue the execution of the route even if the module finds no matches",
-                        "required": true
-                    }
-                ],
-                "expect": [
-                    {
-                        "name": "text",
-                        "type": "text",
-                        "label": "Text"
-                    }
-                ],
-                "interface": [
-                    {
-                        "name": "forwardedFromEmail",
-                        "type": "text",
-                        "label": "forwardedFromEmail"
-                    }
-                ]
-            }
-        },
-        {
-            "id": 6,
-            "module": "util:ComposeTransformer",
-            "version": 1,
-            "parameters": {},
-            "mapper": {
-                "value": "{{if(indexOf(1.from.address; \"@cadams.com\") + \"<0\"; 1.from.address; 8.forwardedFromEmail)}}"
-            },
-            "metadata": {
-                "designer": {
-                    "x": 600,
-                    "y": 0,
-                    "name": "Get sender email"
-                },
-                "restore": {},
-                "expect": [
-                    {
-                        "name": "value",
-                        "type": "text",
-                        "label": "Text"
-                    }
-                ]
-            }
-        },
-        {
             "id": 5,
             "module": "google-drive:createAFolder",
             "version": 4,
             "parameters": {
-                "__IMTCONN__": 8136307
+                "__IMTCONN__": 123
             },
             "mapper": {
-                "name": "{{6.value}}",
+                "name": "{{1.from.address}}",
                 "shared": false,
-                "folderId": "/12KDwT0LC6hWv6SbbXZkVP1fY_BTSn9qh/1NWlz4Pu9pPdRTyzoE5D6GQVbAelueR_T",
+                "folderId": "/",
                 "destination": "drive"
             },
             "metadata": {
                 "designer": {
-                    "x": 900,
+                    "x": 300,
                     "y": 0
                 },
                 "restore": {
@@ -219,7 +120,7 @@
                                 "scoped": "true",
                                 "connection": "google-restricted"
                             },
-                            "label": "My Google Restricted connection (chris@cadams.com.au)"
+                            "label": "My Google Restricted connection (Add yours)"
                         }
                     }
                 },
@@ -269,22 +170,22 @@
             }
         },
         {
-            "id": 10,
+            "id": 19,
             "module": "google-drive:createAFileFromText",
             "version": 4,
             "parameters": {
-                "__IMTCONN__": 8136307
+                "__IMTCONN__": 123
             },
             "mapper": {
                 "name": "{{formatDate(1.date; \"YYYY-MM-DD hh:mm A\")}} - {{1.subject}}",
-                "content": "From: {{6.value}}\nSubject: {{1.subject}}\n\nMessage text:\n{{1.text}}\n\nHTML content:\n{{1.html}}\n\nAttachments:\n{{join(map(1.attachments; 1.attachments[].fileName); )}}",
-                "convert": true,
+                "content": "From: {{1.from.address}}\nSubject: {{1.subject}}\n\n{{1.text}}\n\nAttachments:\n{{join(map(1.attachments; \"fileName\"); newline)}}",
+                "convert": false,
                 "folderId": "{{5.id}}",
                 "destination": "drive"
             },
             "metadata": {
                 "designer": {
-                    "x": 1200,
+                    "x": 600,
                     "y": 0
                 },
                 "restore": {
@@ -303,7 +204,7 @@
                                 "scoped": "true",
                                 "connection": "google-restricted"
                             },
-                            "label": "My Google Restricted connection (chris@cadams.com.au)"
+                            "label": "My Google Restricted connection (Add yours)"
                         }
                     }
                 },
@@ -364,22 +265,22 @@
             "module": "google-email:ActionSendEmail",
             "version": 2,
             "parameters": {
-                "account": 8136307
+                "account": 123
             },
             "mapper": {
                 "cc": [],
                 "to": [
-                    "your@email.com"
+                    "your_email@example.com"
                 ],
                 "bcc": [],
                 "from": "",
-                "html": "Email has been saved to your Google Drive. View it (including all attachments) at {{10.webContentLink}}.",
-                "subject": "Email arrived from {{6.value}}",
+                "html": "Email has been saved to your Google Drive. View it (including all attachments) at {{5.webViewLink}}.",
+                "subject": "Email arrived from {{1.from.address}}",
                 "attachments": []
             },
             "metadata": {
                 "designer": {
-                    "x": 1500,
+                    "x": 900,
                     "y": 0
                 },
                 "restore": {
@@ -406,7 +307,7 @@
                                 "scoped": "true",
                                 "connection": "google-restricted"
                             },
-                            "label": "My Google Restricted connection (chris@cadams.com.au)"
+                            "label": "My Google Restricted connection (Add yours)"
                         }
                     }
                 },
@@ -505,7 +406,7 @@
             },
             "metadata": {
                 "designer": {
-                    "x": 1800,
+                    "x": 1200,
                     "y": 0
                 },
                 "expect": [
@@ -523,7 +424,7 @@
             "module": "google-drive:uploadAFile",
             "version": 4,
             "parameters": {
-                "__IMTCONN__": 8136307
+                "__IMTCONN__": 123
             },
             "mapper": {
                 "data": "{{2.data}}",
@@ -534,7 +435,7 @@
             },
             "metadata": {
                 "designer": {
-                    "x": 2100,
+                    "x": 1500,
                     "y": 0
                 },
                 "restore": {
@@ -549,7 +450,7 @@
                                 "scoped": "true",
                                 "connection": "google-restricted"
                             },
-                            "label": "My Google Restricted connection (chris@cadams.com.au)"
+                            "label": "My Google Restricted connection (Add yours)"
                         }
                     }
                 },
