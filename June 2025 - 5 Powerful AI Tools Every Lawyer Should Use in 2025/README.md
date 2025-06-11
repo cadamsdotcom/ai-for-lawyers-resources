@@ -14,6 +14,8 @@ The 5 tools demoed in this video are:
 
 [Link to the demo GPT](https://chatgpt.com/g/g-6826d17419208191bfb0a54b0f2b1e13-layperson-legal-translator-gpt)
 
+![Custom GPT configuration](GPT.png)
+
 **Note:** for [Custom GPTs]([url](https://help.openai.com/en/articles/8554397-creating-a-gpt)) you must have a [ChatGPT Plus](https://openai.com/index/chatgpt-plus/) subscription.
 
 ## What it is:
@@ -22,7 +24,7 @@ AI chat pre-loaded with instructions to translate into layperson's terms. Use it
 ## Why you should use it in 2025:
 Save time you'd gathering your thoughts before writing explanation emails. Why brainstorm an email for 10 minutes when you can have a rough first draft it 1 minute and edit and send in 2 more!
 
-![Architecture Diagram](Layperson%20Legal%20Translator%20GPT.png)
+![Architecture Diagram](Laypersons%20Legal%20Translator%20GPT.png)
 
 <details><summary>How to get started</summary>
 
@@ -66,7 +68,7 @@ Make it ask for your jurisdiction, or be an expert in your area of law. Or make 
 
 ## Deep Dive 2: Workflow Automation With make.com
 
-Note: you will need a make.com account to use make.com to import and create scenarios. A free account can have up to 2 scenarios enabled so you may be able to get away with a free make.com account.
+![make.com workflow screenshot](make.com.png)
 
 ## What it is:
 Automate your daily work with [make.com](https://make.com) - a web based tool that connects different sources of data and allows you to encode your daily work in the form of workflows. Perform actions when you receive emails, in response to chat messages, and more.
@@ -75,6 +77,8 @@ Automate your daily work with [make.com](https://make.com) - a web based tool th
 Automating the simple stuff frees you up to work on the stuff that truly matters - the work where your creative input can have the most leverage.
 
 <details><summary>How to get started</summary>
+
+Note: you will need a make.com account to use make.com to import and create scenarios. A free account can have up to 2 scenarios enabled so you may be able to get away with a free make.com account.
 
 1. In make.com, go to **Scenarios** and click **Create a new scenario**.
 2. At the bottom of the window, click the "..." icon ("More") and click "Import blueprint"
@@ -94,6 +98,8 @@ Make it analyze the attachment to determine whether to save it in a different pl
 ---
 
 ## Deep Dive 3 & 4: Anthropic's Claude, Alternative AI to ChatGPT
+
+![Claude Desktop UI screenshot](Claude.png)
 
 ## What it is:
 Claude is an alternative to ChatGPT that has all the same feaures plus a few extras. In particular it lets you upload documents and ask questions of them, and can connect to your Google Drive, Gmail, Google Calendar, and more.
@@ -122,6 +128,8 @@ Claude can make charts and diagrams too! When working with any data, try asking 
 ---
 
 ## Deep Dive 5: Fathom Online Meeting Recorder
+
+![Fathom Meeting Recorder screenshot](Fathom.png)
 
 ## What it is:
 Software that automatically records your online meetings, keeping track of who said what. After the meeting is over, it prepares a summary, transcript, and an AI Q&A which can be used later to refer back to the meeting.
