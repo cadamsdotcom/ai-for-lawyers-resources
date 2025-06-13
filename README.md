@@ -12,7 +12,7 @@ Everything you need to get started is below.
 
 Video resources:
 
-- [5 Powerful AI Tools Every Lawyer Should Use in 2025 (Boost Efficiency & Win Clients)](https://github.com/cadamsdotcom/ai-for-lawyers-resources/blob/main/June%202025%20-%205%20Powerful%20AI%20Tools%20Every%20Lawyer%20Should%20Use%20in%202025)
+- [5 Powerful AI Tools Every Lawyer Should Use in 2025 (Boost Efficiency & Win Clients)](https://github.com/cadamsdotcom/ai-for-lawyers-resources/blob/main/June%202025%20-%205%20Powerful%20AI%20Tools%20Every%20Lawyer%20Should%20Use%20in%202025) ([View Video on YouTube](https://youtu.be/e30E4YspNa0))
 
 ---
 

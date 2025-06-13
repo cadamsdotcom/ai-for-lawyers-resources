@@ -1,6 +1,6 @@
 # June 2025 - 5 Powerful AI Tools Every Lawyer Should Use in 2025
 
-[View Video on YouTube](https://youtu.be/JBOTotd_Uow)
+[View Video on YouTube](https://youtu.be/e30E4YspNa0)
 
 ---
 
